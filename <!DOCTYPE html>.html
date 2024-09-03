@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Ansari - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: white;
+            color: #333;
+            padding-top: 30px;
+            min-height: 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #passion-text {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .content {
+            background: white;
+            padding: 40px;
+            margin-top: 20px;
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        .links {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .link-btn {
+            padding: 10px 20px;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .link-btn:hover {
+            background-color: #1E90FF;
+            transform: scale(1.05);
+        }
+        .code-style {
+            font-family: 'Source Code Pro', monospace;
+            color: #0066cc;
+            font-weight: bold;
+            background-color: #f0f8ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .particle {
+            position: absolute;
+            background-color: rgba(65, 105, 225, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .skill-item {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+        #terminal {
+            background-color: #000;
+            color: #4169E1;
+            font-family: 'Source Code Pro', monospace;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            height: 200px;
+            overflow-y: auto;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .image-item {
+            max-width: 300px;
+            margin: 10px;
+        }
+        .image-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .headshot {
+            width: 200px;
+            border-radius: 50%;
+            margin: 20px auto 100px;
+            display: block;
+        }
+        .inline-image {
+            max-width: 300px;
+        }
+        .inline-image.right {
+            float: right;
+            margin: 0 0 20px 20px;
+        }
+        .inline-image.left {
+            float: left;
+            margin: 0 20px 20px 0;
+            max-width: 200px; /* Reduced size */
+        }
+        .school-activities {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .activity-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .activity-item:hover {
+            transform: translateX(10px);
+        }
+        .contact-info {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .contact-info h3 {
+            color: #4169E1;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            font-family: 'Source Code Pro', monospace;
+            color: #0066cc;
+            font-weight: bold;
+            background-color: #f0f8ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- Add your headshot image here -->
+            <!-- Comment: Upload your headshot image to the same directory as this HTML file and replace 'path_to_headshot.jpg' with the actual filename -->
+            <img src="/Users/ibrahimansari/Downloads/1691156710266 (1).jpeg" class="headshot">
+            <h1>Hey, I'm</h1>
+            <h2>Ibrahim Ansari.</h2>
+            <p>Nice to meet you :)</p>
+            <div id="passion-text"></div>
+        </div>
+    </header>
+
+    <div class="links">
+        <a href="https://www.linkedin.com/in/ibrahim-ansari-775529270/" class="link-btn">LinkedIn</a>
+        <a href="https://github.com/ibrahimansari1" class="link-btn">GitHub</a>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <!-- Add your Big Data Challenge image here -->
+            <!-- Comment: Upload your Big Data Challenge image to the same directory as this HTML file and replace 'path_to_award_photo.jpg' with the actual filename -->
+            
+            <p>I'm a passionate high school student from Hamilton, driven by a desire to make a significant impact in the world of technology, data science, and environmental conservation.</p>
+
+            <p>My journey began in grade 8 when I first discovered <span class="code-style">Python</span>. This initial spark ignited a passion for coding that led me to explore other languages like <span class="code-style">C</span> and <span class="code-style">C#</span>. My dedication paid off when I landed my first internship at <span class="code-style">GeniTeam Solutions</span>, a game development company, where I gained invaluable real-world experience in software development.</p>
+            <img src="/Users/ibrahimansari/Downloads/1708746821388.jpeg" class="inline-image right">
+            <p>Eager to challenge myself, I participated in various coding competitions. A highlight was the <span class="code-style">STEM Fellowship Big Data Challenge</span>, where my team secured a top 10 position. We also received the <span class="code-style">CC UNESCO Award for Scholarly Communication</span>, and our <a href="/Users/ibrahimansari/Downloads/Analyzing Urban Heat Islands and their Impact  on monarch Butterfly Population (2).pdf" class="code-style">paper was published</a> by Canadian Science Publishing - an achievement I'm incredibly proud of. This success opened doors, leading to invitations to meet with heads of technology from various countries, including Canada, the UK, and the US.</p>
+            
+            <!-- Add your data analysis image here -->
+            <!-- Comment: Upload your data analysis image to the same directory as this HTML file and replace 'path_to_data_analysis.jpg' with the actual filename -->
+            <p>Driven by a desire to use my skills for positive change, I took on an internship with <span class="code-style">WWF</span>, where I served as a <span class="code-style">data scientist</span> in conservation efforts. This experience not only honed my technical skills but also deepened my commitment to environmental causes. Currently, I continue to work with WWF as a part-time <span class="code-style">data analyst</span>, contributing to crucial conservation projects.</p>
+
+            <p>My passion for innovation and problem-solving led me to join <a href="https://tablingos.com/" class="code-style">Tablingos</a>, a startup I co-run with friends. At Tablingos, I wear multiple hats as a <span class="code-style">software engineer</span> and contribute to marketing efforts. Our mission is to revolutionize data transformation, enabling businesses to process and analyze their data with ease, without requiring extensive programming knowledge. This venture has been an exciting opportunity to apply my skills in a entrepreneurial context and contribute to making data science more accessible to businesses of all sizes.</p>
+
+            <p>My academic pursuits continue alongside my professional endeavors. I'm currently working towards my <span class="code-style">second publication</span>, eager to further contribute to the scientific community and push the boundaries of what's possible with technology and data analysis.</p>
+            <img src="/Users/ibrahimansari/Downloads/IMG_0319.jpg" class="inline-image left">
+            <p>Beyond my professional pursuits, I'm an avid traveler, finding joy in exploring new places and cultures. I'm also a dedicated camper and nature lover, which aligns perfectly with my work in conservation. These experiences not only broaden my perspective but also fuel my creativity and problem-solving skills in unexpected ways.</p>
+            
+            <p>As I continue on this exciting journey, I'm constantly seeking new challenges and opportunities to grow. Whether it's diving deeper into data science, developing innovative software solutions, or finding new ways to contribute to environmental conservation, I'm committed to making a positive impact in everything I do.</p>
+
+            <p>I'm excited about what the future holds and am always open to connecting with like-minded individuals who share my passions for technology, data, and making a difference in the world.</p>
+
+            <p>Next summer, I will be working in supply chain management at <span class="code-style">Nestlé</span> as a <span class="code-style">data scientist</span>, which I'm really looking forward to!</p>
+
+            <h3>My Skills</h3>
+            <div class="skill-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">C/C#</div>
+                <div class="skill-item">Pandas</div>
+                <div class="skill-item">Matplotlib</div>
+                <div class="skill-item">Scikit-Learn</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Data Analysis</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+            </div>
+
+            <div class="school-activities">
+                <h3>School Activities</h3>
+                <div id="activity-list"></div>
+            </div>
+
+            <div id="terminal">
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Email: iansari4161@outlook.com</p>
+                <p>Phone: (905) 379-2659</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const passions = ['Software Engineer', 'Data Scientist', 'Traveller', 'Camper', 'Nature Lover', 'Family Man', 'Entrepreneur', 'Language Learner', 'Astrophysicist'];
+        let currentIndex = 0;
+
+        function changePassion() {
+            const passionText = document.getElementById('passion-text');
+            passionText.style.opacity = 0;
+            
+            setTimeout(() => {
+                passionText.textContent = passions[currentIndex];
+                passionText.style.opacity = 1;
+                currentIndex = (currentIndex + 1) % passions.length;
+            }, 500);
+        }
+
+        setInterval(changePassion, 3000);
+
+        window.addEventListener('scroll', () => {
+            const links = document.querySelector('.links');
+            if (window.scrollY > 100) {
+                links.style.top = '10px';
+                links.style.left = 'auto';
+                links.style.right = '10px';
+                links.style.transform = 'translateX(0)';
+            } else {
+                links.style.top = '20px';
+                links.style.left = '50%';
+                links.style.right = 'auto';
+                links.style.transform = 'translateX(-50%)';
+            }
+        });
+
+        // Particle effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 5 + 2}px`;
+            particle.style.height = particle.style.width;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            document.querySelector('header').appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 3000);
+        }
+
+        setInterval(createParticle, 200);
+
+        // Terminal effect
+        const terminal = document.getElementById('terminal');
+        const commands = [
+            '> Hello, World!',
+            'import numpy as np',
+            'def fibonacci(n):',
+            '    if n <= 1:',
+            '        return n',
+            '    else:',
+            '        return fibonacci(n-1) + fibonacci(n-2)',
+            'for i in range(10):',
+            '    print(fibonacci(i))',
+        ];
+
+        let commandIndex = 0;
+
+        function typeCommand() {
+            if (commandIndex < commands.length) {
+                const command = commands[commandIndex];
+                let charIndex = 0;
+
+                function typeChar() {
+                    if (charIndex < command.length) {
+                        terminal.innerHTML += command.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeChar, 50);
+                    } else {
+                        terminal.innerHTML += '<br>';
+                        commandIndex++;
+                        setTimeout(typeCommand, 1000);
+                    }
+                }
+
+                typeChar();
+            } else {
+                // Clear the terminal and start over
+                setTimeout(() => {
+                    terminal.innerHTML = '';
+                    commandIndex = 0;
+                    typeCommand();
+                }, 2000);
+            }
+        }
+
+        // School activities
+        const activities = [
+            'Founder and leader of The Helm, our school newspaper',
+            'Co-founder and co-leader of the Speech and Debate Club',
+            'Leader of the Diversity Council',
+            'Serving as the Diversity Prefect',
+            'Member of the school tennis team',
+            'Science and math tutor, helping fellow students excel in these subjects'
+        ];
+
+        function displayActivities() {
+            const activityList = document.getElementById('activity-list');
+            activities.forEach((activity, index) => {
+                const activityItem = document.createElement('div');
+                activityItem.classList.add('activity-item');
+                activityItem.textContent = activity;
+                activityItem.style.opacity = '0';
+                activityItem.style.transform = 'translateY(20px)';
+                activityList.appendChild(activityItem);
+
+                setTimeout(() => {
+                    activityItem.style.transition = 'opacity 0.5s, transform 0.5s';
+                    activityItem.style.opacity = '1';
+                    activityItem.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // Start animations when page loads
+        window.addEventListener('load', () => {
+            typeCommand();
+            displayActivities();
+        });
+    </script>
+</body>
+</html>
